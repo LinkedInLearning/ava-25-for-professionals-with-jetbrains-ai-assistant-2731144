@@ -1,110 +1,83 @@
-# Module imports 
+package com.linkedin.importingmodules.solution;
 
-## Your task
-
-Below is a `ShoppingCart` class with 14 individual imports. Your goal is to:
-
-1. Replace all imports with a single module import
-2. Verify the code still compiles and runs correctly
-
----
-
-## Given code (before refactoring)
-
-```java
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Optional;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.stream.Collectors;
-import java.text.NumberFormat;
-import java.util.Locale;
+import module java.base;
 
 public class ShoppingCart {
-    
+
     private List<Item> items;
     private LocalDateTime createdAt;
-    
+
     public ShoppingCart() {
         this.items = new ArrayList<>();
         this.createdAt = LocalDateTime.now();
     }
-    
+
     public void addItem(String name, BigDecimal price, int quantity) {
         items.add(new Item(name, price, quantity));
     }
-    
+
     public BigDecimal calculateTotal() {
         return items.stream()
                 .map(item -> item.price().multiply(BigDecimal.valueOf(item.quantity())))
                 .reduce(BigDecimal.ZERO, BigDecimal::add)
                 .setScale(2, RoundingMode.HALF_UP);
     }
-    
+
     public Optional<Item> findMostExpensive() {
         return items.stream()
                 .max((a, b) -> a.price().compareTo(b.price()));
     }
-    
+
     public Map<String, Integer> getItemCounts() {
         return items.stream()
                 .collect(Collectors.toMap(
-                    Item::name,
-                    Item::quantity,
-                    Integer::sum
+                        Item::name,
+                        Item::quantity,
+                        Integer::sum
                 ));
     }
-    
+
     public void saveReceipt(String filename) throws IOException {
         StringBuilder receipt = new StringBuilder();
         receipt.append("Shopping Cart Receipt\n");
         receipt.append("Created: ")
-               .append(createdAt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
-               .append("\n\n");
-        
+                .append(createdAt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+                .append("\n\n");
+
         NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
-        
+
         for (Item item : items) {
             receipt.append(String.format("%s x%d - %s\n",
-                item.name(),
-                item.quantity(),
-                currencyFormat.format(item.price())
+                    item.name(),
+                    item.quantity(),
+                    currencyFormat.format(item.price())
             ));
         }
-        
+
         receipt.append("\nTotal: ")
-               .append(currencyFormat.format(calculateTotal()));
-        
+                .append(currencyFormat.format(calculateTotal()));
+
         Files.writeString(Path.of(filename), receipt.toString());
     }
-    
-    public static void main(String[] args) throws IOException {
+
+    void main(String[] args) throws IOException {
         ShoppingCart cart = new ShoppingCart();
-        
+
         cart.addItem("Laptop", new BigDecimal("999.99"), 1);
         cart.addItem("Mouse", new BigDecimal("25.50"), 2);
         cart.addItem("Keyboard", new BigDecimal("79.99"), 1);
-        
+
         System.out.println("Total: $" + cart.calculateTotal());
-        
-        cart.findMostExpensive().ifPresent(item -> 
-            System.out.println("Most expensive: " + item.name())
+
+        cart.findMostExpensive().ifPresent(item ->
+                System.out.println("Most expensive: " + item.name())
         );
-        
+
         System.out.println("Item counts: " + cart.getItemCounts());
-        
+
         cart.saveReceipt("receipt.txt");
         System.out.println("Receipt saved!");
     }
 }
 
 record Item(String name, BigDecimal price, int quantity) {}
-```
-
