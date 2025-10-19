@@ -1,6 +1,6 @@
 # ScopedValue  
 
-## The Problem
+## The problem
 
 You have a simple order processing system that uses `ThreadLocal` to track the current user. This has the typical ThreadLocal problems:
 - You must remember to call `remove()`
@@ -9,7 +9,7 @@ You have a simple order processing system that uses `ThreadLocal` to track the c
 
 ---
 
-## Given code (it's using ThreadLocal)
+## Given code (it's using `ThreadLocal`)
 
 ```java
 public class OrderService {
