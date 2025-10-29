@@ -1,8 +1,5 @@
 package com.linkedin.unnamedvariables.solution;
 
-
-import java.util.List;
-
 public class Demo {
     void main(String[] args) {
         System.out.println("=== Task 1: Get Book Summary ===");

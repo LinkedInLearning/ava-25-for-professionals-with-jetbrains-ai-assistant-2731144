@@ -5,8 +5,6 @@
 ```java
 record Book(String title, String author, int pages, double price) {}
 
-record Student(String name, int age, String major, double gpa) {}
-
 class Library {
 
     // Method 1: Get book summary

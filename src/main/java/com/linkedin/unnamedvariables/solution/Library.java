@@ -1,11 +1,7 @@
 package com.linkedin.unnamedvariables.solution;
 
-import java.util.List;
-import java.util.ArrayList;
 
 record Book(String title, String author, int pages, double price) {}
-
-record Student(String name, int age, String major, double gpa) {}
 
 public class Library {
 

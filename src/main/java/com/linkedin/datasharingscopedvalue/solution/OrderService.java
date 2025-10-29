@@ -8,7 +8,7 @@ public class OrderService {
     // NEW: Using ScopedValue instead of ThreadLocal
     private static final ScopedValue<String> CURRENT_USER = ScopedValue.newInstance();
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         // Simulate processing two orders
         processOrder("Ouidad", "ORD-001", 99.99);
         processOrder("Stephan", "ORD-002", 149.99);
