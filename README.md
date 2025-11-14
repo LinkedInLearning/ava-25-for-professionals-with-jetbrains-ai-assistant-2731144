@@ -1,5 +1,5 @@
-# COURSENAME
-This is the repository for the LinkedIn Learning course `course-name`. The full course is available from [LinkedIn Learning][lil-course-url].
+# Java 25 for Professionals with JetBrains AI Assistant
+This is the repository for the LinkedIn Learning course `Java 25 for Professionals with JetBrains AI Assistant`. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![lil-thumbnail-url]
 
