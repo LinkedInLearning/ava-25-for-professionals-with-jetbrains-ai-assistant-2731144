@@ -5,6 +5,8 @@ This is the repository for the LinkedIn Learning course `Java 25 for Professiona
 
 ## Course Description
 
+In this intermediate course, Java trainer and developer Maaike van Putten dives into the cutting-edge features of Java 25 and shows you how to elevate your programming skills to new heights. Explore modern Java techniques such as compact source files, flexible constructors, and unnamed variables that simplify your code writing process. Learn how to implement advanced concurrency patterns and manage data safely across threads. Discover how stream gatherers can enhance your functional programming and how modular imports can clean up your codebase. Learn to write clear and concise Java documentation using the latest Markdown syntax. This course helps you build a practical understanding of the newest features in Java, allowing you to create more efficient and maintainable applications.
+
 _See the readme file in the main branch for updated instructions and information._
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
@@ -24,25 +26,20 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
-2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
 
 ## Instructor
 
-Instructor name
+Maaike van Putten
 
-Instructor description
+Trainer and Developer for Java, Python, Spring Boot, and More
 
                             
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/maaike-van-putten?u=104).
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
+[lil-course-url]: https://www.linkedin.com/learning/java-25-for-professionals-with-jetbrains-ai-assistant
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D560DAQF2m5EQ3dB05w/learning-public-crop_675_1200/B56ZomIrg.JQAY-/0/1761576401792?e=2147483647&v=beta&t=q5_Z3CpWlLSxZMx7mp2__Ul6kKN-_2sPHAYuMBDX5ko
 
